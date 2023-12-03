@@ -1,0 +1,57 @@
+.header{
+    width: 100%;
+    background-color: #272829;
+    display: flex;
+    color: white;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo p{
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.logo span{
+    font-size: 30px;
+    color: #f5b61b;
+    font-weight: bolder;
+}
+
+.search input{
+    padding: 5px;
+    border: none;
+}
+
+.search button{
+    background-color: #f5b61b;
+    padding: 5px;
+    border: none;
+}
+
+.cart{
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 15px;
+}
+
+.cart span{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #f5b61b;
+    color: #272829;
+    width: 20px;
+    height: 20px;
+    font-size: 18px;
+    border-radius: 100%;
+    text-align: center;
+}
