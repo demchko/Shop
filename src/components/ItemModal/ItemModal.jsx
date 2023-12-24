@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import style from './ItemModal.module.css';
 import { FaShoppingCart } from "react-icons/fa";
-const ItemModal = ({ id, showModal, onClose }) => {
-    const [product, setProduct] = React.useState(null);
+import { useDispatch } from "react-redux";
 
-    React.useEffect(() => {
+const ItemModal = ({ id, showModal, onClose }) => {
+    const [product, setProduct] = useState(null);
+    const [quantity, setQuantity] = useState(1); // Initialize quantity
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
         const fetchData = async () => {
             if (id) {
                 const result = await axios(`https://api.escuelajs.co/api/v1/products/${id}`);
-                setProduct(result.data);
+                setProduct({ ...result.data, quantity: 1 }); // Add quantity property
             }
         };
         fetchData();
@@ -17,7 +22,19 @@ const ItemModal = ({ id, showModal, onClose }) => {
 
     if (!showModal) return null;
 
-    console.log(product);
+    const incrementQuantity = () => {
+        setQuantity(prevQty => prevQty + 1);
+    };
+
+    const decrementQuantity = () => {
+        setQuantity(prevQty => Math.max(1, prevQty - 1));
+    };
+
+    const click = () => {
+        dispatch({ type: 'ADD_ITEM', payload: { ...product, quantity } }); // Use updated quantity
+        setQuantity(1);
+        onClose();
+    };
 
     return (
         <div className={style.modalOverlay} onClick={onClose}>
@@ -25,21 +42,21 @@ const ItemModal = ({ id, showModal, onClose }) => {
                 <button className={style.closeButton} onClick={onClose}>X</button>
                 {
                     product &&
-                    <div>
+                    <div >
                         <h1>{product.title}</h1>
-                        <img src={product.images[0]} />
+                        <img src={product.images[0]} alt={product.title} />
                         <p>{product.description}</p>
                         <hr />
                         <div className={style.block} >
-                            <p className={style.price} >Price: ${product.price}</p>
+                            <p className={style.price} >Price: ${product.price * quantity}</p>
                             <div className={style.btns} >
                                 <p>Qty:</p>
-                                <button>-</button>
-                                <p>1</p>
-                                <button>+</button>
+                                <button onClick={decrementQuantity}>-</button>
+                                <p>{quantity}</p> {/* Display quantity */}
+                                <button onClick={incrementQuantity}>+</button>
                             </div>
                         </div>
-                        <button className={style.add} >
+                        <button onClick={click} className={style.add} >
                             <FaShoppingCart />
                             <p>Add To Cart</p>
                         </button>

@@ -20,7 +20,6 @@ const Category = () => {
         fetchData();
     }, []);
 
-    console.log(category);
 
     return (
         <div className={style.wrapper} >

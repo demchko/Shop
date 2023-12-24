@@ -36,6 +36,10 @@
 }
 
 .cart{
+    color: white;
+}
+
+.cart{
     font-size: 22px;
     display: flex;
     align-items: center;
@@ -54,4 +58,14 @@
     font-size: 18px;
     border-radius: 100%;
     text-align: center;
+}
+
+a{
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .logo{
+        display: none;
+    }
 }

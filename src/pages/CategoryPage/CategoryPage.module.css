@@ -1,0 +1,12 @@
+.wrapper{
+    display: flex;
+    align-items: center;
+    padding: 2%;
+    font-size: 20px;
+    border-bottom: 1px solid #272829;
+    box-shadow: 2px 2px 2px #272829;
+}
+
+a{
+    color: black;
+}

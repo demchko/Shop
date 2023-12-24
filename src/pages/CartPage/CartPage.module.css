@@ -1,0 +1,79 @@
+.block{
+    padding: 2%;
+}
+
+.block h1{
+    color: #272829;
+}
+
+.container{
+    display: flex;
+}
+
+.leftBlock{
+    width: 65%;
+}
+
+.rightBlock{
+    width: 35%;
+    background-color: #eaeaea;
+    border-radius: 15px;
+    padding: 2%;
+    font-size: 17px;
+}
+
+.listItem{
+    display: flex;
+    margin-top: 1%;
+}
+
+.listItem img{
+    border-radius: 15px;
+}
+
+.item{
+    margin-left: 10px;
+}
+
+.listItem img{
+    width: 15%;
+}
+
+.btns{
+    display: flex;
+    align-items: center;
+}
+
+.btns button{
+    background-color: white;
+    border: 1px solid lightgray;
+    padding: 5px;
+    margin: 5px;
+}
+
+.orderItem{
+    padding-bottom: 10%;
+    border-bottom: 1px solid black;
+}
+
+.rightBlock button{
+    width: 100%;
+    padding: 5px;
+    background-color: #f5b61b;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.clearButton{
+    background-color: #d25b4f;
+    color: white;
+    border-radius: 10px;
+    width: 20%;
+    padding: 10px;
+    border: none;
+    margin-top: 15px;
+    font-size: 18px;
+}
