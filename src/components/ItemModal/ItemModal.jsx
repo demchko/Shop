@@ -36,6 +36,8 @@ const ItemModal = ({ id, showModal, onClose }) => {
         onClose();
     };
 
+    console.log(product);
+
     return (
         <div className={style.modalOverlay} onClick={onClose}>
             <div className={style.modalContent} onClick={e => e.stopPropagation()}>
