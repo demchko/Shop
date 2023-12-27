@@ -53,9 +53,11 @@ const reducer = (state = initialState, action) => {
                         : item
                 );
 
+                const finishArr = updatedBasketIncrement.filter(item => item.quantity !== 0);
+
                 return {
                     ...state,
-                    basket: updatedBasketIncrement,
+                    basket: finishArr,
                     total: state.total - itemToDecrement.price
                 };
             } else {

@@ -43,7 +43,9 @@ const Header = () => {
         <div className={style.header} >
             <ItemModal id={selectedId} showModal={showModal} onClose={closeModal} />
             <div className={style.logo} >
-                <p>Shopping</p><span>HUB</span>
+                <Link to='/'>
+                    <p>Shopping</p><span>HUB</span>
+                </Link>
             </div>
             <div className={style.search} >
                 <input value={search} onChange={e => setSearch(e.target.value)} placeholder='Search here...' />
@@ -53,7 +55,7 @@ const Header = () => {
                 (search !== '' && products.length !== 0)
                 && <div className={style.itemBlock} >
                     {
-                        filteredArray.map(item => (
+                        filteredArray.slice(0, 6).map(item => (
                             <div className={style.searchItem} onClick={() => openModal(item.id)} >
                                 <img src={item.images[0]} />
                                 <p>{item.title}</p>

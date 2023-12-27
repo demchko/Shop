@@ -14,6 +14,11 @@
     align-items: center;
 }
 
+.logo a{
+    display: flex;
+    color: white;
+}
+
 .logo p{
     font-size: 30px;
     font-weight: bolder;
