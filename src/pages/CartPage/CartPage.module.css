@@ -77,3 +77,25 @@
     margin-top: 15px;
     font-size: 18px;
 }
+
+
+@media (max-width: 768px) {
+    .container{
+        display: block;
+    }
+
+    .listItem img{
+        width: 50%;
+    }
+
+    .clearButton{
+        width: 50%;
+    }
+
+    .rightBlock{
+        width: 65%;
+        display: block;
+        margin: 10px auto;
+        padding: 15px;
+    }
+}

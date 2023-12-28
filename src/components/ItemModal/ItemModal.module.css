@@ -79,3 +79,10 @@
     background-color: white;
     border: 1px solid #0e364f;
 }
+
+
+@media (max-width: 768px) {
+    .modalContent{
+        width: 80%;
+    }
+}
