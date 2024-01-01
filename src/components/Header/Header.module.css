@@ -100,4 +100,9 @@ a{
     .logo{
         display: none;
     }
+
+    .itemBlock{
+        width: 80%;
+        left: 5%;
+    }
 }
