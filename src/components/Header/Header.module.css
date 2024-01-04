@@ -72,6 +72,7 @@ a{
 
 .itemBlock{
     position: absolute;
+    z-index: 1;
     top: 100%;
     left: 42%;
     width: 20%;

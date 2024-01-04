@@ -55,12 +55,16 @@ const Header = () => {
                 (search !== '' && products.length !== 0)
                 && <div className={style.itemBlock} >
                     {
-                        filteredArray.slice(0, 6).map(item => (
-                            <div className={style.searchItem} onClick={() => openModal(item.id)} >
-                                <img src={item.images[0]} />
-                                <p>{item.title}</p>
-                            </div>
-                        ))
+                        filteredArray.length
+                        ? filteredArray.slice(0, 6).map(item => (
+                                <div className={style.searchItem} onClick={() => openModal(item.id)} >
+                                    <img src={item.images[0]} />
+                                    <p>{item.title}</p>
+                                </div>
+                            ))
+                        : <div className={style.searchItem} >
+                            <p>No item!</p>
+                          </div>
                     }
                 </div>
             }
